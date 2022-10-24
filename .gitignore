@@ -1,0 +1,4 @@
+.vscode
+*.local
+*.pem
+node_modules
