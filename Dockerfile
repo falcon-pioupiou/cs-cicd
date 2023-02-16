@@ -1,7 +1,7 @@
 FROM node:16-bullseye-slim AS build
 WORKDIR /app
 COPY ["package.json", "package-lock.json*", "./app"]
-RUN npm ci
+RUN npm ic
 
 FROM gcr.io/distroless/nodejs:16
 COPY --from=build /app /app
