@@ -1,6 +1,6 @@
 FROM node:16-bullseye-slim AS build
 WORKDIR /app
-COPY ["package.json", "package-lock.json*", "./app"]
+COPY ["package.json", "package-lock.json*", "./"]
 RUN npm install
 
 FROM gcr.io/distroless/nodejs:16
