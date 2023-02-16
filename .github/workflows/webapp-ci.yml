@@ -48,6 +48,9 @@ jobs:
       with:
         file: ./Dockerfile
         load: true
+        cache-from: type=registry,ref=${{ secrets.REGISTRY_HOST }}/public/webapp-cicd-demo:cache
+        cache-to: type=inline
+        platforms: linux/amd64
         tags: "${{ secrets.REGISTRY_HOST }}/public/webapp-cicd-demo:${{ steps.tag.outputs.version_tag }}"
 
     - name: Inspect Docker Image
